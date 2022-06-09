@@ -16,6 +16,92 @@
 
       <title>WeatherApp</title>
     </head>
-    <body></body>
+    <body>
+      <div class="container">
+        <form id="searchForm" class="mb-3">
+          <div class="row">
+            <div class="col-10">
+              <input
+                type="search"
+                placeholder="Enter city here..."
+                id="searchInput"
+                class="form-control shadow-sm border-3"
+                autocomplete="off"
+                autofocus="on"
+              />
+            </div>
+            <div class="col-2">
+              <button type="image" class="btn btn-primary w-70">
+                <img src="images/search.png" width="20" />
+              </button>
+            </div>
+          </div>
+        </form>
+          
+        <h1 id="cityName">New York</h1>  
+        <h2 id="date">Saturday 26 March, 2022 |
+        <span id="time"> 6:42p.m.</span></h2>
+       
+        <div class="overview">  
+             <div class="col"><img src="images/clwr.png" width="200" /></div>
+          <div class="col"><strong id="temperature">18</strong
+              ><span class="units"
+                ><a href="#" id="tempC" class="active">°C</a> |
+                <a href="#" id="tempf" class="active">°F</a></span
+              >
+     <h3 id="description">Cloudy</h3>
+      </div>
+     
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-20">
+      <img src="images/wind.png" width="40" />
+      <div class="card-body">
+        <h5 class="card-title" id="wind">66<span>Km/h</span></h5>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Wind</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-20">
+      <img src="images/humidity.png" width="40" /> 
+      <div class="card-body">
+        <h5 class="card-title"id="humidity">60<span>%</span></h5>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Humidity</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-20">
+      <img src="images/temperature.png" width="40" /> 
+      <div class="card-body">
+        <h5 class="card-title"id="temp">16<span>°C</span></h5>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Feels like: </small>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="forecast"></div>
+        <small>
+          <a href="https://github.com/phunkelambo/MyWeatherApp.git"
+            target="_blank"
+        >Open-source code</a
+          >
+          by Phunke Lambo
+        </small>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+              
+    <script src="src/app.js"></script>
+    </body>
   </head>
 </html>
