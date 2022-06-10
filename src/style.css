@@ -1,9 +1,80 @@
+body {
+  font-family: monospace, arial, serif;
+}
+
 h1 {
   color: blueviolet;
   text-align: center;
+  font-weight: bold;
 }
 
 h2 {
   font-size: medium;
   text-align: center;
+}
+
+.container {
+  border: 2mm ridge blueviolet;
+  border-radius: 8px;
+  padding: 5px;
+  max-inline-size: 600px;
+}
+
+#searchForm {
+  font-size: 20px;
+  margin-block-start: 10px;
+  margin-inline-end: 0px;
+  padding: 5px 30px 10px;
+}
+
+#searchForm:hover {
+  font-size: 13px;
+  padding: 7px 15px;
+}
+
+.overview {
+  text-align: center;
+}
+
+#temperature {
+  font-size: 58px;
+  margin-left: 40px;
+}
+
+.units {
+  font-size: 18px;
+  transition: all 150ms ease-in-out;
+  inset-block-start: 5px;
+  margin-top: -10px;
+  cursor: default;
+  position: absolute;
+  color: blueviolet;
+  padding: 0px;
+  margin: 0%;
+}
+
+#description {
+  font-size: 38px;
+  font-weight: bold;
+  color: blueviolet;
+  margin-left: 100px;
+}
+
+.card {
+  text-align: center;
+  border-color: blueviolet;
+  border-radius: 10px;
+  box-sizing: fit-content;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+#tempyIcon,
+#windIcon,
+#humyIcon {
+vertical-align: middle;
+justify-content: center;
 }
