@@ -13,11 +13,21 @@ h2 {
   text-align: center;
 }
 
+.Weather .btn {
+  background: #885df1;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px 0;
+  border: none;
+  height: 50px;
+}
+
 .container {
   border: 2mm ridge blueviolet;
   border-radius: 8px;
   padding: 5px;
   max-inline-size: 600px;
+  color: rgb(194, 130, 194);
 }
 
 #searchForm {
@@ -77,4 +87,16 @@ h2 {
 #humyIcon {
 vertical-align: middle;
 justify-content: center;
+}
+
+.Weather footer {
+  font-size: 14px;
+  margin-top: 40px;
+  line-height: 18px;
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+}
+
+.Weather footer a {
+  color: #885df1;
 }
