@@ -6,20 +6,27 @@ h1 {
   color: blueviolet;
   text-align: center;
   font-weight: bold;
+  margin-bottom: 1px;
 }
 
 h2 {
-  font-size: medium;
+  font-size: 16px;
   text-align: center;
+  margin-top: 1px;
 }
 
-.Weather .btn {
-  background: #885df1;
+ .btn {
+  background: blueviolet;
   font-weight: bold;
   font-size: 16px;
   padding: 15px 0;
   border: none;
-  height: 50px;
+  height: 40px;
+  width: 70px;
+}
+.btn:hover {
+  background: whitesmoke;
+  border-color: blueviolet;
 }
 
 .container {
@@ -27,7 +34,7 @@ h2 {
   border-radius: 8px;
   padding: 5px;
   max-inline-size: 600px;
-  color: rgb(194, 130, 194);
+  background-color: rgb(233, 194, 233);
 }
 
 #searchForm {
@@ -85,11 +92,11 @@ h2 {
 #tempyIcon,
 #windIcon,
 #humyIcon {
-vertical-align: middle;
+margin-left: 30px;
 justify-content: center;
 }
 
-.Weather footer {
+.Weather forecast {
   font-size: 14px;
   margin-top: 40px;
   line-height: 18px;
@@ -97,6 +104,6 @@ justify-content: center;
   color: rgba(39, 33, 66, 0.4);
 }
 
-.Weather footer a {
+.Weather forecast a {
   color: #885df1;
 }
