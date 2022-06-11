@@ -102,7 +102,7 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function searchCity(event) {
+function handleSubmit(event) {
   event.preventDefault();
 
   let cityInputElement = document.querySelector("#searchInput");
@@ -131,7 +131,7 @@ function displayCelsiusTemperature(event) {
 }
 
 let form = document.querySelector("#searchForm");
-form.addEventListener("submit", searchCity);
+form.addEventListener("submit", handleSubmit);
 
 let celsiusTemperature = null;
 
@@ -141,5 +141,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#tempc");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-searchCity("New York");
+search("New York");
 displayForecast();
