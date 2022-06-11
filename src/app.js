@@ -71,7 +71,7 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 
   let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#cityName");
+  let cityInputElement = document.querySelector("#cityName");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -83,7 +83,7 @@ function showTemperature(response) {
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   currentElement.innerHTML = response.data.feels_like;
-  cityElement.innerHTML = response.data.name;
+  cityInputElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -97,7 +97,6 @@ function showTemperature(response) {
 }
 
 function getCity(event) {
-  event.preventDefault();
   let apiKey = "8678fe46de622085a6470ee25e2466ff";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -109,7 +108,7 @@ function searchCity(event) {
   event.preventDefault();
 
   let searchInputElement = document.querySelector("#cityName");
-  searchCity(searchInputElement.value);
+  getCity(searchInputElement.value);
 }
 
 
