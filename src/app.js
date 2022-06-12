@@ -78,7 +78,7 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  currentElement.innerHTML = response.data.feels_like;
+  currentElement.innerHTML = Math.round(response.data.main.feels_like);
   cityInputElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -99,13 +99,11 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function searchCity(event) {
+function handleSubmit(event) {
   event.preventDefault();
 
-  let searchInput = document.querySelector("#cityDetails");
-                
-  let h1 = document.querySelector("h1");
-   h1.innerHTML = `${searchInput.value}`;
+  let cityInputElement= document.querySelector("#searchInput").value;
+  search(cityInputElement)
 }
 
 function displayFahrenheitTemperature(event) {
@@ -129,8 +127,8 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let form = document.querySelector("form");
-form.addEventListener("submit", searchCity);
+let form = document.querySelector("#searchForm");
+form.addEventListener("submit", handleSubmit);
 
 let celsiusTemperature = null;
 
@@ -140,5 +138,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#tempc");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-
+search("Toronto");
 displayForecast();
