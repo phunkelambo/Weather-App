@@ -114,12 +114,11 @@ position: relative;
   text-align: center;
   font-size: 14px;
   margin-top: 30px;  
+  border-color: blueviolet;
 }
 
 #forecast a {
   color: blueviolet
 }
 
- col-2 {
-border-color: blueviolet;
- }
+ 
