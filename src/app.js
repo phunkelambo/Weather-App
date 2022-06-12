@@ -4,6 +4,8 @@ function formatDate(timestamp) {
   if (hours < 10) {
     hours = `0${hours}`;
   }
+  let year = new Year(timestamp);
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -17,8 +19,9 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${year} ${hours}:${minutes}`;
 }
 
 
@@ -126,7 +129,7 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let form = document.querySelector("#searchForm");
+let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
 
 let celsiusTemperature = null;
@@ -137,5 +140,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#tempc");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("New York");
+
 displayForecast();
