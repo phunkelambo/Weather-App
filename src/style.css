@@ -51,6 +51,10 @@ h2 {
 
 .overview {
   text-align: center;
+  padding-left: 30px;
+  display: inline;
+  text-align: center;
+  row-gap: 30px;
 }
 
 #temperature {
@@ -74,37 +78,56 @@ h2 {
   font-size: 20px;
   font-weight: bold;
   color: blueviolet;
+  margin-right: 5px;
   margin-left: 80px;
+  padding-right: 5px;
 }
 
 .card {
   text-align: center;
   border-color: blueviolet;
   border-radius: 10px;
-  box-sizing: fit-content;
-  width: 50%;
+  box-sizing: border-box;
+  width: 100%;
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 10px;
   font-size: 14px;
+  line-height: 16px;
 }
+ 
+#forecastDetails {
+  border:blueviolet;
+  border-radius: 8px;
+ }
 
 #tempyIcon,
 #windIcon,
 #humyIcon {
-margin-left: 20px;
+margin-left: 30px;
 justify-content: center;
 position: relative;
 }
 
-.Weather forecast {
-  font-size: 14px;
+.p {
+  font-size: 10px;
+}
+
+.weather-forecast {
+  text-align: center;
+  font-size: 18px;
   margin-top: 40px;
   line-height: 18px;
-  text-align: center;
-  color: rgba(39, 33, 66, 0.4);
+  color: blueviolet;
 }
 
 .Weather forecast a {
-  color: #885df1;
+  color: blueviolet
+}
+
+.col-2 {
+  border: blueviolet;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
 }

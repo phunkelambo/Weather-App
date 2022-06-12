@@ -21,19 +21,13 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return days[day];
-}
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row1">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -102,11 +96,13 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function handleSubmit(event) {
+function searchCity(event) {
   event.preventDefault();
 
-  let cityInputElement = document.querySelector("#searchInput");
-  searchCity(cityInputElement.value);
+  let searchInput = document.querySelector("#cityDetails");
+                
+  let h1 = document.querySelector("h1");
+   h1.innerHTML = `${searchInput.value}`;
 }
 
 function displayFahrenheitTemperature(event) {
@@ -131,7 +127,7 @@ function displayCelsiusTemperature(event) {
 }
 
 let form = document.querySelector("#searchForm");
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", searchCity);
 
 let celsiusTemperature = null;
 

@@ -38,15 +38,15 @@
             </div>
           </div>
         </form>
-          
+          <div>
         <h1 id="cityName">New York</h1>  
         <h2 id="date">Saturday 26 March, 2022 |
         <span id="time"> 6:42p.m.</span></h2>
-
+          </div>
   
         <div class="overview">  
-             <div class="col1" id="icon"><img src="images/clwr.png" width="200" /></div>
-          <div class="row justify-content-evenly" id="depLine">
+             <div class="col1" id="icon"><img src="images/clwr.png" width="100" /></div>
+          <div class="row" id="depLine">
           <div class="col-4"><strong id="temperature"></strong
               ><span class="units"
                 ><a href="#" id="tempc" class="active">°C</a> 
@@ -55,38 +55,47 @@
           <div class="col-4"><span id="description">Cloudy</span>
       </div>
      </div>
-     
+        </div>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card h-10">
-      <img src="images/wind.png" width="60" id="windIcon" />
+      <img src="images/wind.png" width="20" id="windIcon" />
       <div class="card-body">
-        <h5 class="card-title" id="wind"> <span> Km/h</span></h5>
+        <h5 class="card-title" id="wind"> 
+          <span> Km/h</span
+            ></h5>
         <p class="card-text">Wind</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-10">
-      <img src="images/humidity.png" width="60"id="humyIcon" /> 
+      <img src="images/humidity.png" width="20" id="humyIcon" /> 
       <div class="card-body">
-        <h5 class="card-title"id="humidity"> <span> %</span></h5>
+        <h5 class="card-title"id="humidity">
+          <span>%</span
+            ></h5>
         <p class="card-text">Humidity</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-10">
-      <img src="images/temperature.png" width="40" id="tempyIcon" /> 
+      <img src="images/temperature.png" width="20" id="tempyIcon" /> 
       <div class="card-body">
-        <h5 class="card-title"id="temp"> <span> °C</span></h5>
+        <h5 class="card-title"id="temp"> 
+          <span> °C</span
+            ></h5>
         <p class="card-text">Feels like </p>
       </div>
     </div>
   </div>
 </div>
+<hr />
+<div id="forecastDetails">
 <div class="weather-forecast" id="forecast"></div>
+</div>
         <small>
           <a href="https://github.com/phunkelambo/MyWeatherApp.git"
             target="_blank"
