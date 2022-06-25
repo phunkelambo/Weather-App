@@ -55,6 +55,10 @@ h2 {
   display: inline;
 }
 
+#icon {
+  width: 80px;
+  padding-right: 30px;
+}
 #temperature {
   font-size: 68px;
   margin-left: 30px;
