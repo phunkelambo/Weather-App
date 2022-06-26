@@ -57,8 +57,10 @@ h3{
 }
 
 #icon {
-  width: 100px;
-  padding-right: 30px;
+  width: 150px;
+  height: 120px;
+  padding-right: 10px;
+  margin-left: 220px;
   align-items: center;
 }
 
@@ -69,32 +71,46 @@ h3{
 }
 
 .units {
-  font-size: 18px;
-  transition: all 150ms ease-in-out;
   margin-top: -34px;
-  cursor: default;
-  position: relative;
   color: blueviolet;
 
 }
 .unitt {
-  margin-top: -50px;
+  top: -45px;
+  font-size: 18px;
+  transition: all 150ms ease-in-out;
+  cursor: default;
+  position: relative;
 }
 
 #description {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: blueviolet; 
   text-align: right;
   margin-top: 0px;
+  margin-right: -60px;
+  margin-left: 15px;
+  font-style: italic;
 }
+
+#tempy {
+  display: flex;
+  justify-content: space-between;
+  max-width: 150%;
+  margin-right: -100px;
+  margin-left: 50px;
+  padding-left: 30px;
+}
+
 
 #tempyIcon,
 #windIcon,
 #humyIcon {
 margin-left: 30px;
 justify-content: center;
-position: relative;
+position: static;
+padding-left: 40px;
 }
 
 ul {

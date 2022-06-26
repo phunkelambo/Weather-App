@@ -28,38 +28,26 @@ function formatDate(timestamp) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
-forecast.forEach(function (forecastDay, index) {
-  if (index < 6) {
+  days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
-      <div class="col-2">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-        <img
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="42"
-        />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
-            forecastDay.temp.max
-          )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
-            forecastDay.temp.min
-          )}° </span>
-        </div>
-      </div>
-  `;
-  }
-});
-  
-  forecastHTML = forecastHTML + `</div>`;
+          <div class="col-2">
+            <div class="week-day">${day}</div>
+            <div class="small-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+            <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-max">18°</span>
+                <span class="weather-forecast-temperature-min">8°</span>
+            </div>
+            <div class="description">partly cloudy</div>`;
+
+    forecastHTML = forecastHTML + `</div>`;
+  });
+
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 function getForecast(coordinates) {
@@ -92,7 +80,7 @@ function showTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.date * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
