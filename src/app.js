@@ -1,30 +1,41 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
+function showCurrentDate(latestDate) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let day = days[latestDate.getDay()];
+  let month = months[latestDate.getMonth()];
+  let date = latestDate.getDate();
+  let year = latestDate.getFullYear();
+  let hours = latestDate.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = date.getMinutes();
+  let minutes = latestDate.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  let dateToday = document.querySelector("#current-date-time");
+  dateToday.innerHTML = `${day}, ${date} ${month} ${year}<br />${hours}:${minutes}`;
+  return dateToday;
 }
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   return days[day];
 }
 
@@ -33,33 +44,55 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
-                <div class="weather-forecast-date ">${formatDay(
-                  forecastDay.dt
-                )}</div>
-               <br / > 
-                <img class="weather-forecast-icon" src="http://openweathermap.org/img/wn/${
-                  forecastDay.weather[0].icon
-                }@2x.png" alt="clear sky" width="70"/> <br />
-                <span class="max">${Math.round(
-                  forecastDay.temp.max
-                )}°</span> <br />
-                <span class="min">${Math.round(forecastDay.temp.min)}°</span>
-                </div>`;
+        `
+                    <div class="col-2">
+                <div style="min-height: 0px">
+                  <div
+                    class="collapse collapse-horizontal"
+                    id="weatherForecast"
+                  >
+                    <div class="card card-body text-center weather-forecast-box" style="width: 100%" id="forecast">
+                      <div class="weather-forecast-date">${formatDay(
+                        forecastDay.dt
+                      )}</div>
+                      <div class="weather-icon">
+                      ${forecastWeatherIcon(forecastDay.weather[0].description)}
+                      </div>
+                      <div class="weather-forecast-temperature" style="font-size: 14px">
+                        <span class="weather-forecast-temperature-max"
+                          >${Math.round(forecastDay.temp.max)}°/</span
+                        >
+                        <span class="weather-forecast-temperature-min"
+                          >${Math.round(forecastDay.temp.min)}°</span
+                        >
+                      </div>
+                      <div>
+                        <br />
+                        <i class="bi bi-umbrella"></i>
+                        <span style="font-size: 14px">${Math.round(
+                          forecastDay.pop * 100
+                        )}%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
     }
+    document.querySelector("#rain-probability").innerHTML = Math.round(
+      forecastDay.pop * 100
+    );
   });
-
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
   let apiKey = "8678fe46de622085a6470ee25e2466ff";
-let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  ttps: getForecast(response.data.coord);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  
   axios.get(apiUrl).then(displayForecast);
 }
 
