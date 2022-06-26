@@ -55,7 +55,7 @@ function displayForecast(response) {
             </div>
         </div>`;
     }
-  );
+});
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
@@ -147,4 +147,4 @@ let celsiusLink = document.querySelector("#tempc");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Toronto");
-displayForecast();
+displayForecast(" ");
