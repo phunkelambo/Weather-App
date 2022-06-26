@@ -29,36 +29,29 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response);
-  let forecast = math.round(response.data.daily.temp);
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = `<div class = "row">`;
+  let forecast = response.data.daily;
+  let forecastEle = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index > 0 && index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class = "col-2">
-          <div class = "five-day-forecast">${getForecastDay(
-            forecastDay.dt
-          )}</div>
-            <img src = "https://openweathermap.org/img/wn/${
-              forecastDay.weather[0].icon
-            }@2x.png" alt = "forecast-icon" width = "40"/>
-            <div class = " forecast-description">${
-              forecastDay.weather[0].description
-            }</div>
-            <div class = "forecast-temperatures">
-              <span class = "forecast-max-temp">${Math.round(
-                forecastDay.temp.max
-              )}°C</span>
-              <span class = "forecast-min-temp">${Math.round(
-                forecastDay.temp.min
-              )}°C</span>
-            </div>
-        </div>`;
+        `<div class="col-2">
+                <div class="weather-forecast-date ">${formatDay(
+                  forecastDay.dt
+                )}</div>
+               <br / > 
+                <img class="weather-forecast-icon" src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt="icon" width="70"/> <br />
+                <span class="max">${Math.round(
+                  forecastDay.temp.max
+                )}°</span> <br />
+                <span class="min">${Math.round(forecastDay.temp.min)}°</span>
+                </div>`;
     }
   });
+  
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
