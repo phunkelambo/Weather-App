@@ -131,10 +131,7 @@ li {
   font-size: 14px;
   margin-top: 30px;  
   border-color: blueviolet;
-}
-
-#forecast a {
-  color: blueviolet
+  border-color: 5px;
 }
 
 
