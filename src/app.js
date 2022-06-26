@@ -19,6 +19,7 @@ function showCurrentDate(latestDate) {
   let date = latestDate.getDate();
   let year = latestDate.getFullYear();
   let hours = latestDate.getHours();
+  
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -26,10 +27,10 @@ function showCurrentDate(latestDate) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let dateToday = document.querySelector("#current-date-time");
-  dateToday.innerHTML = `${day}, ${date} ${month} ${year}<br />${hours}:${minutes}`;
-  return dateToday;
-}
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = `${day}, ${date} ${month} ${year}<br /> ${hours}: ${minutes}`;
+  return dateElement
+}                         
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
