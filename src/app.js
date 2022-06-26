@@ -36,8 +36,8 @@ function displayForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
-          <div class="col-2">
+      
+          `<div class="col-2">
             <div class = "five-day-forecast">${getForecastDay(
         forecastDay.dt
       )}</div>
