@@ -30,7 +30,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   console.log(response);
-  let forecast = response.data.daily;
+  let forecast = math.round(response.data.daily.temp);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class = "row">`;
@@ -147,4 +147,3 @@ let celsiusLink = document.querySelector("#tempc");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Toronto");
-displayForecast();
