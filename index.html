@@ -38,13 +38,23 @@
             </div>
           </div>
         </form>
-          <div>
-        <h1 id="cityName">New York</h1>  
-        <h2 id="date">Saturday 26 March, 2022 |
-        <span id="time"> 6:42p.m.</span></h2>
-        <h3  id="description">Cloudy</h3>
-       </div>
-  
+        <div class="calender">
+          <div class="row">
+          <div class="col">
+           <h1 id="cityName">New York</h1>  
+           <h2 id="date">Saturday 26 March, 2022</h2>
+           <h3 id="time"> 6:42p.m.</h3>
+           </div>
+
+           <div class="col">
+           <span class="units" id="temperature"></span
+            ><span class="unitt">
+              <a href="#" id="tempc">°C</a> |
+              <a href="#" id="tempf">°F</a>
+                </span>
+        </div>
+          </div>
+
         <div class="overview"> 
           <div class="row">
            <div class="col-6">
@@ -52,28 +62,19 @@
              <img src="images/clwr.png" 
                 alt="Cloudy icon"
                 class="weatherIcon float-left"
-                id="icon"
-                width="100" 
+                id="icon" 
                 />
             </div>
            </div>
-           
-          <div class="float-left">
-            <div class="col-6">
-          <span class="units" id="temperature"></span
-            ><span class="units">
-              <a href="#" id="tempc">°C</a> |
-              <a href="#" id="tempf">°F</a>
-                </span>
-              </div>
+            <p  id="description">Cloudy</p>
            </div>
 
        <div class="row">
         <div class="col-6">
          <div  id="tempy">
-          <img src="images/temperature.png" width="15" /> <span> °C</span> |
-          <span id="wind"> <img src="images/wind.png" width="15" /></span><span> Km/h</span> |
-          <span id="humidity"> <img src="images/humidity.png" width="15"><span> %</span>
+          <img src="images/temperature.png" width="30" /> <span> °C</span> 
+          <span id="wind"> <img src="images/wind.png" width="30" /></span><span> Km/h</span> 
+          <span id="humidity"> <img src="images/humidity.png" width="30"><span> %</span>
   </div>
     </div>
       </div>

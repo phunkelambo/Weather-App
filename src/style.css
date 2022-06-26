@@ -4,14 +4,17 @@ body {
 
 h1 {
   color: blueviolet;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
-  margin-bottom: 1px;
+  margin-bottom: 0px;
 }
 
-h2 {
-  text-align: center;
+h2,
+h3{
+  text-align: left;
   font-size: 20px;
+  margin-bottom: 1px;
+  margin-top: 1px;
 }
 
  .btn {
@@ -51,36 +54,39 @@ h2 {
 
 .overview {
   text-align: center;
-  padding-left: 10px;
-  display: inline;
 }
 
 #icon {
-  width: 80px;
+  width: 100px;
   padding-right: 30px;
+  align-items: center;
 }
+
 #temperature {
-  font-size: 68px;
-  margin-left: 30px;
+  font-size: 72px;
+  margin-left: 80px;
   color: blueviolet;
 }
 
 .units {
   font-size: 18px;
   transition: all 150ms ease-in-out;
-  margin-top: -10px;
-  top: -34px;
+  margin-top: -34px;
   cursor: default;
-  position: absolute;
+  position: relative;
   color: blueviolet;
 
+}
+.unitt {
+  margin-top: -50px;
 }
 
 #description {
   font-size: 20px;
   font-weight: bold;
   color: blueviolet; 
-  text-align: center ;
+  text-align: right;
+  margin-top: 0px;
 }
 
 #tempyIcon,
@@ -115,14 +121,6 @@ li {
   color: blueviolet
 }
 
-.weather-app {
-  border: 1px solid #dadde1;
-  width: 652px;
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 5px;
-}
 
 .weatherIcon {
   height: 64px;
@@ -137,10 +135,6 @@ li {
   line-height: 1;
 }
 
-.units {
-  position: relative;
-  top: -34px;
-}
 
 .weather-forecast-date {
   font-size: 16px;
