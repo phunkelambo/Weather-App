@@ -21,9 +21,7 @@ function formatDate(timestamp) {
   ];
 
   let day = days[date.getDay()];
-  return `${day}, ${year} 
-  
- let time = ${hours}:${minutes}`; 
+  return `${day}${hours}:${minutes}`; 
 }
 
 
