@@ -4,7 +4,7 @@ function formatDate(timestamp) {
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let year = new Year(timestamp);
+  let year = 2022
 
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -21,7 +21,9 @@ function formatDate(timestamp) {
   ];
 
   let day = days[date.getDay()];
-  return `${day} ${year} ${hours}:${minutes}`;
+  return `${day}, ${year} 
+  
+ let time = ${hours}:${minutes}`; 
 }
 
 
@@ -36,19 +38,28 @@ function displayForecast() {
       forecastHTML +
       `
           <div class="col-2">
-            <div class="week-day">${day}</div>
-            <div class="small-icon"><i class="fa-solid fa-cloud-sun"></i></div>
-            <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-max">18°</span>
-                <span class="weather-forecast-temperature-min">8°</span>
+            <div class = "five-day-forecast">${getForecastDay(
+        forecastDay.dt
+      )}</div>
+            <img src = "https://openweathermap.org/img/wn/${forecastDay.weather[0].icon
+      }@2x.png" alt = "forecast-icon" width = "40"/>
+            <div class = " forecast-description">${forecastDay.weather[0].description
+      }</div>
+            <div class = "forecast-temperatures">
+              <span class = "forecast-max-temp">${Math.round(
+                forecastDay.temp.max
+              )}°C</span>
+              <span class = "forecast-min-temp">${Math.round(
+                forecastDay.temp.min
+              )}°C</span>
             </div>
-            <div class="description">partly cloudy</div>`;
-
-    forecastHTML = forecastHTML + `</div>`;
-  });
-
+        </div>`;
+    }
+  );
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 
 function getForecast(coordinates) {
   let apiKey = "8678fe46de622085a6470ee25e2466ff";

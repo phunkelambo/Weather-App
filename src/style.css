@@ -12,7 +12,7 @@ h1 {
 h2,
 h3{
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 1px;
   margin-top: 1px;
 }
@@ -132,6 +132,8 @@ li {
   margin-top: 30px;  
   border-color: blueviolet;
   border-color: 5px;
+  margin-left: 60px;
+
 }
 
 
