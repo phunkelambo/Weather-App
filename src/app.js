@@ -147,4 +147,4 @@ let celsiusLink = document.querySelector("#tempc");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Toronto");
-displayForecast(" ");
+displayForecast();
