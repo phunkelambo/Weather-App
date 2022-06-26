@@ -109,7 +109,7 @@ h3{
 #humyIcon {
 margin-left: 30px;
 justify-content: center;
-position: static;
+position: absolute;
 padding-left: 40px;
 }
 
